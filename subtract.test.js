@@ -11,11 +11,19 @@ describe('subtract function', () => {
     expect(subtract(1, -2)).toBe(3);
   });
 
+  it('throws an error if less than 2 arguments are provided', () => {
+    expect(() => subtract(1)).toThrow('The subtract function requires exactly two parameters');
+  });
+
+  it('throws an error if more than 2 arguments are provided', () => {
+    expect(() => subtract(1, 2, 3)).toThrow('The subtract function requires exactly two parameters');
+  });
+
   it('throws an error if arguments are not numbers', () => {
     expect(() => subtract(1, 'a')).toThrow('Arguments must be numbers');
   });
-
-  it('throws an error if one argument is missing', () => {
-    expect(() => subtract(1)).toThrow('Arguments must be numbers');
+  
+  it('throws an error if arguments are not numbers', () => {
+    expect(() => subtract('a',6)).toThrow('Arguments must be numbers');
   });
 });
