@@ -11,6 +11,12 @@ describe('multiply function', () => {
     expect(multiply(2, -3)).toBe(-6);
   });
 
+  it('multiplies any number by 0 to get 0', () => {
+    expect(multiply(2, 0)).toBe(0);
+    expect(multiply(-5, 0)).toBe(0);
+    expect(multiply(0, 0)).toBe(0);
+  });
+
   it('throws an error if less than 2 arguments are provided', () => {
     expect(() => multiply(2)).toThrow('The multiply function requires exactly two parameters');
   });
@@ -22,7 +28,7 @@ describe('multiply function', () => {
   it('throws an error if arguments are not numbers', () => {
     expect(() => multiply(2, 'a')).toThrow('Arguments must be numbers');
   });
-  
+
   it('throws an error if arguments are not numbers', () => {
     expect(() => multiply('a',6)).toThrow('Arguments must be numbers');
   });
